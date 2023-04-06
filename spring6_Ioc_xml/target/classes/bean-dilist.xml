@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="empOne" class="com.spring.ditest.Emp">
+        <property name="empName" value="jelly"></property>
+        <property name="dept" value="技术部"></property>
+        <property name="age" value="17"></property>
+        <property name="loves">
+            <array>
+                <value>抽烟</value>
+                <value>喝酒</value>
+            </array>
+        </property>
+    </bean>
+
+    <bean id="empTwo" class="com.spring.ditest.Emp">
+        <property name="empName" value="jelly"></property>
+        <property name="dept" value="技术部"></property>
+        <property name="age" value="17"></property>
+        <property name="loves">
+            <array>
+                <value>抽烟</value>
+                <value>喝酒</value>
+            </array>
+        </property>
+    </bean>
+
+    <bean id="dept" class="com.spring.ditest.Dept">
+        <property name="deptName" value="技术部"></property>
+        <property name="empList">
+            <list>
+                <ref bean="empOne"></ref>
+                <ref bean="empTwo"></ref>
+            </list>
+        </property>
+    </bean>
+</beans>

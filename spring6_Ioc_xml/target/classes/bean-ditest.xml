@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    一、引入外部bean
+        1.创建俩个类的对象:dept和emp
+        2.在emp的bean标签里面,使用property引入dept的bean
+    -->
+    <bean id="dept" class="com.spring.ditest.Dept">
+        <property name="deptName" value="安保部"></property>
+    </bean>
+
+    <bean id="emp" class="com.spring.ditest.Emp">
+<!--        普通属性注入-->
+        <property name="empName" value="lucy"></property>
+        <property name="age" value="18"></property>
+<!--        注入一个对象类型的属性-->
+<!--        用ref属性-->
+        <property name="dept" ref="dept"></property>
+    </bean>
+
+<!--    二、内部bean-->
+    <bean id="emp" class="com.spring.ditest.Emp">
+        <!--        普通属性注入-->
+        <property name="empName" value="lucy"></property>
+        <property name="age" value="18"></property>
+        <!--        注入一个对象类型的属性-->
+        <!--        用ref属性-->
+        <property name="dept">
+            <bean id="dept" class="com.spring.ditest.Dept">
+                <property name="deptName" value="安保部"></property>
+            </bean>
+        </property>
+    </bean>
+
+<!--    三、级联属性赋值-->
+    <bean id="emp" class="com.spring.ditest.Emp">
+        <property name="empName" value="lucy"></property>
+        <property name="age" value="18"></property>
+        <property name="dept" ref="dept"></property>
+        <property name="dept.deptName" value="333"></property>
+    </bean>
+</beans>

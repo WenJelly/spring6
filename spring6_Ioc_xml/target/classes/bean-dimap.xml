@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--
+    1.创建俩个对象
+    2.注入普通类型属性
+    3.在学生bean注入map集合类型属性
+-->
+    <bean id="student" class="com.spring.dimap.Student">
+        <property name="sId" value="01"></property>
+        <property name="sName" value="jelly"></property>
+        <property name="teacherMap">
+            <map>
+                <entry>
+                    <key>
+                        <value>10010</value>
+                    </key>
+                    <ref bean="teacher01"></ref>
+                </entry>
+                <entry>
+                    <key>
+                        <value>10086</value>
+                    </key>
+                    <ref bean="teacher02"></ref>
+                </entry>
+            </map>
+        </property>
+
+    </bean>
+
+    <bean id="teacher01" class="com.spring.dimap.Teacher">
+        <property name="tId" value="01"></property>
+        <property name="tName" value="jelly"></property>
+    </bean>
+
+    <bean id="teacher02" class="com.spring.dimap.Teacher">
+        <property name="tId" value="02"></property>
+        <property name="tName" value="jelly"></property>
+    </bean>
+
+</beans>
