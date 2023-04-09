@@ -11,6 +11,10 @@
     <module>spring6_aop</module>
       <module>spring6-junit5</module>
     <module>spring6-jdbc-tx</module>
+      <module>spring6-resources</module>
+      <module>spring6_Ioc_xml</module>
+    <module>spring6-i18n</module>
+    <module>spring6-validation</module>
   </modules>
   <version>1.0-SNAPSHOT</version>
   <name>Spring_T Maven Webapp</name>
@@ -145,6 +149,18 @@
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
       <version>1.2.15</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>7.0.5.Final</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish</groupId>
+      <artifactId>jakarta.el</artifactId>
+      <version>4.0.1</version>
     </dependency>
 
   </dependencies>
